@@ -1,39 +1,66 @@
-# Open Source, Self-Hosted Chat GPT APP
-
-https://user-images.githubusercontent.com/19983429/223075269-7e22678c-b44b-41db-8337-48721f1f4207.mp4
-
-## Stack
-
-- Prisma,
-- tRPC
-- NextJS
-- TypeScript
-- Sqlite
-- Mantine (React comoponent library)
-
-## How to run
-
-1. Clone the repository
-2. Create a `.env` file containing 2 entries:
+```
+sparklist-mobile-slim
+├─ app.py
+├─ cacheJoblist.py
+├─ instance
+│  └─ project_database.db
+├─ jobs.py
+├─ manifest.json
+├─ material-calculations
+├─ requirements.txt
+├─ static
+│  ├─ android
+│  │  ├─ android-launchericon-144-144.png
+│  ├─ apple-icon-180.png
+│  ├─ bootstrap.min.css
+│  ├─ cached_joblist.txt
+│  ├─ client_secrets.json
+│  ├─ decora.png
+│  ├─ decoras.png
+│  ├─ google.png
+│  ├─ icon512.png
+│  ├─ images
+│  │  ├─ apple-icon-180.png
+│  │  ├─ apple-splash-dark-1125-2436.jpg
+│  │  ├─ favicon-196.png
+│  │  ├─ manifest-icon-192.maskable.png
+│  │  └─ manifest-icon-512.maskable.png
+│  ├─ index.css
+│  ├─ index.js
+│  ├─ ios
+│  │  ├─ 100.png
+│  ├─ manifest-icon-192.maskable.png
+│  ├─ manifest.json
+│  ├─ offline.html
+│  ├─ SparkList-Logo.png
+│  ├─ standard.png
+│  ├─ sw.js
+│  └─ windows11
+│     ├─ LargeTile.scale-100.png
+├─ templates
+│  ├─ add_material.html
+│  ├─ assets
+│  │  ├─ bootstrap
+│  │  │  └─ css
+│  │  │     └─ bootstrap.min.css
+│  │  ├─ css
+│  │  │  └─ Campaign-Progress--Summary-Panel.css
+│  │  ├─ img
+│  │  │  └─ SparkList Logo.png
+│  │  └─ js
+│  │     └─ bs-init.js
+│  ├─ base.html
+│  ├─ bending.html
+│  ├─ create_project.html
+│  ├─ edit_form_quantities.html
+│  ├─ index.html
+│  ├─ projects.html
+│  ├─ project_exists.html
+│  └─ test.html
+├─ temp_material_list.xlsx
+└─ xlsx
+   ├─ material.xlsx
+   ├─ MaterialList.xlsx
+   └─ matlist.xlsx
 
 ```
-DATABASE_URL="file:./db.sqlite"
-```
-
-2. Run `yarn`
-3. Run `yarn prisma migrate deploy`
-4. Run `yarn build`
-5. Run `yarn start`
-6. Visit localhost:3000/settings
-7. Add your OpenAI API Key
-8. Enjoy your self-hosted ChatGPT
-
-## Roadmap 🚀
-
-> Contribution welcomed!
-
-1. Dockerize the app
-2. Add ChatGPT prompt templates to speed up reusable worflows
-3. Integrate vocal chat with the Whisper API
-4. Make it more mobile friendly
-5. Overall imporovement of the design

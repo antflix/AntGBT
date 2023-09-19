@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+    /* Center the form horizontally and add some spacing */
+    .bend {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+
+    }
+
+    form {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="w3-main" style="background-color: #333; color:white; width:100vw;">
+    <div class="dropdown">
+        <button class="btn btn-bar dropdown-toggle" type="button" id="menu1" data-toggle="dropdown"
+            style="width:100vw; background-color: #4e4e4e; color: white; ; border: 3px grey solid; border-bottom: 2px rgb(0, 87, 128) solid">Bend Options
+            </span></button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="width:100vw; background-color: #4e4e4e; color: white;">
+            <li role="presentation"><a style="color: white;" role="menuitem" tabindex="-1" href="#">HTML</a></li>
+            <li role="presentation"><a style="color: white;" role="menuitem" tabindex="-1" href="#">CSS</a></li>
+            <li role="presentation"><a style="color: white;" role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+            <li role="presentation" style="color: rgb(53, 105, 184);" class="divider"></li>
+            <li role="presentation"><a style="color: white;" role="menuitem" tabindex="-1" href="#">About Us</a></li>
+        </ul>
+    </div>
+
+    <form method="POST" action="/bending">
+        <h2>Offset</h2>
+        <div class="row justify-content-center align-items-center g-2 mar" style="margin:5px;">
+            <div class="col">
+                <div class="mb-3">
+                  <input type="number"
+                    class="form-control" name="offset_depth" id="depth" aria-describedby="helpId" placeholder="Offset Height">
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <select class="form-select form-select-lg" name="offset_angle" id="degree">
+                        <option selected>Offset Angle</option>
+                        <option value="10">10</option>
+                        <option value="22.5">22.5</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <h2>Results:</h2>
+        <svg class="d-flex justify-content-center" xmlns="http://www.w3.org/2000/svg" width="300" height="200"
+            style="display: block; margin: 0 auto;">
+            <!-- First Line -->
+            <line x1="50" y1="100" x2="100" y2="100" stroke="blue" stroke-width="5"></line>
+
+            <!-- Second Line -->
+            <line x1="100" y1="100" x2="{{ x2_line2 }}" y2="50" stroke="red" stroke-width="5"></line>
+
+            <!-- Third Line -->
+            <line x1="{{ x1_line3 }}" y1="50" x2="{{ x1_line3 + 50 }}" y2="50" stroke="blue" stroke-width="5">
+            </line>
+        </svg>
+
+
+        <p>Offset Depth: {{ offset_depth }}"</p>
+        <p>Offset Angle: {{ offset_angle }} degrees</p>
+        <p>Distance Between Bends: {{ distance_between_bends }}"</p>
+        <p>Conduit Shrinkage: {{ conduit_shrinkage }}"</p>
+        <input type="submit" value="Calculate">
+
+    </form>
+
+</div>
+{% endblock %}
